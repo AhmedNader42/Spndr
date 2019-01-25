@@ -103,8 +103,7 @@
 			children = (
 				E26FD94E21FBB5B80037374C /* AppDelegate.h */,
 				E26FD94F21FBB5B80037374C /* AppDelegate.m */,
-				E26FD95121FBB5B80037374C /* ViewController.h */,
-				E26FD95221FBB5B80037374C /* ViewController.m */,
+				E26FD98021FBC3250037374C /* ViewControllers */,
 				E26FD95421FBB5B80037374C /* Main.storyboard */,
 				E26FD95721FBB5BA0037374C /* Assets.xcassets */,
 				E26FD95921FBB5BA0037374C /* LaunchScreen.storyboard */,
@@ -130,6 +129,15 @@
 				E26FD97421FBB5BA0037374C /* Info.plist */,
 			);
 			path = SpndrUITests;
+			sourceTree = "<group>";
+		};
+		E26FD98021FBC3250037374C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E26FD95121FBB5B80037374C /* ViewController.h */,
+				E26FD95221FBB5B80037374C /* ViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
