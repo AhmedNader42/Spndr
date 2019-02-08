@@ -15,6 +15,7 @@
 		E26FD95E21FBB5BA0037374C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26FD95D21FBB5BA0037374C /* main.m */; };
 		E26FD96821FBB5BA0037374C /* SpndrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E26FD96721FBB5BA0037374C /* SpndrTests.m */; };
 		E26FD97321FBB5BA0037374C /* SpndrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E26FD97221FBB5BA0037374C /* SpndrUITests.m */; };
+		E2CE5B1A220E218A003D3CFD /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CE5B19220E218A003D3CFD /* SwipeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E26FD96E21FBB5BA0037374C /* SpndrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpndrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26FD97221FBB5BA0037374C /* SpndrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpndrUITests.m; sourceTree = "<group>"; };
 		E26FD97421FBB5BA0037374C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2CE5B19220E218A003D3CFD /* SwipeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+		E2CE5B1B220E21CF003D3CFD /* SwipeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 				E26FD94E21FBB5B80037374C /* AppDelegate.h */,
 				E26FD94F21FBB5B80037374C /* AppDelegate.m */,
 				E26FD98021FBC3250037374C /* ViewControllers */,
+				E2CE5B18220E2153003D3CFD /* Views */,
 				E26FD95421FBB5B80037374C /* Main.storyboard */,
 				E26FD95721FBB5BA0037374C /* Assets.xcassets */,
 				E26FD95921FBB5BA0037374C /* LaunchScreen.storyboard */,
@@ -138,6 +142,15 @@
 				E26FD95221FBB5B80037374C /* ViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E2CE5B18220E2153003D3CFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2CE5B1B220E21CF003D3CFD /* SwipeView.h */,
+				E2CE5B19220E218A003D3CFD /* SwipeView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26FD95321FBB5B80037374C /* ViewController.m in Sources */,
+				E2CE5B1A220E218A003D3CFD /* SwipeView.m in Sources */,
 				E26FD95E21FBB5BA0037374C /* main.m in Sources */,
 				E26FD95021FBB5B80037374C /* AppDelegate.m in Sources */,
 			);

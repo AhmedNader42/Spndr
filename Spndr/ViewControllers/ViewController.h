@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SwipeView.h"
 
 @interface ViewController : UIViewController
-@property UIView *centerView;
+
+
+@property SwipeView *centerView;
 
 
 @end

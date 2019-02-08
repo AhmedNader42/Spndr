@@ -12,7 +12,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,37 +20,30 @@
     [self setupUI];
     [self setupGestures];
     
+    
 }
 - (void)setupGestures{
-    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection:)];
-    [leftSwipe setDirection: UISwipeGestureRecognizerDirectionLeft];
+//    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection:)];
+//    [leftSwipe setDirection: UISwipeGestureRecognizerDirectionLeft];
+//
+//    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection: )];
+//    [rightSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
+//
+//    UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection:)];
+//    [upSwipe setDirection: UISwipeGestureRecognizerDirectionUp];
+//
+//    leftSwipe.delegate = self;
+//    [self.view addGestureRecognizer: leftSwipe];
+//    [self.view addGestureRecognizer: rightSwipe];
+//    [self.view addGestureRecognizer: upSwipe];
     
-    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection: )];
-    [rightSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
-    
-    UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection:)];
-    [upSwipe setDirection: UISwipeGestureRecognizerDirectionUp];
-    
-    
-    [self.view addGestureRecognizer: leftSwipe];
-    [self.view addGestureRecognizer: rightSwipe];
-    [self.view addGestureRecognizer: upSwipe];
-}
 
-- (void) swipeDetection: (UISwipeGestureRecognizer*) gesture {
-    if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
-        NSLog(@"RIGHT");
-    } else if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
-        NSLog(@"LEFT");
-    } else if (gesture.direction == UISwipeGestureRecognizerDirectionUp) {
-        NSLog(@"UP");
-    }
-
+    
 }
 
 - (void) setupUI {
     // Views Initialization
-    _centerView = [[UIView alloc] init];
+    _centerView = [[SwipeView alloc] init];
     [self.view addSubview: _centerView];
     
     
