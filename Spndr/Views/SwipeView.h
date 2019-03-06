@@ -9,5 +9,7 @@
 
 
 @interface SwipeView : UIView
-
+- (void) setThresholdPoints: (double) rightBound : (double) leftBound;
+@property double rightBound;
+@property double leftBound;
 @end

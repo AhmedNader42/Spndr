@@ -12,7 +12,7 @@
 @interface ViewController : UIViewController
 
 
-@property SwipeView *centerView;
+@property SwipeView *swipeView;
 
 
 @end

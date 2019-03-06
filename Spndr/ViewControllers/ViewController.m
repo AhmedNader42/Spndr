@@ -43,22 +43,23 @@
 
 - (void) setupUI {
     // Views Initialization
-    _centerView = [[SwipeView alloc] init];
-    [self.view addSubview: _centerView];
+    _swipeView = [[SwipeView alloc] init];
+    [_swipeView setThresholdPoints: (self.view.center.x - 40): (self.view.center.x - 220)];
+    [self.view addSubview: _swipeView];
     
     
     // Views customization
-    _centerView.translatesAutoresizingMaskIntoConstraints = false;
-    [_centerView.centerYAnchor constraintEqualToAnchor: self.view.centerYAnchor].active = true;
-    [_centerView.centerXAnchor constraintEqualToAnchor: self.view.centerXAnchor].active = true;
+    _swipeView.translatesAutoresizingMaskIntoConstraints = false;
+    [_swipeView.centerYAnchor constraintEqualToAnchor: self.view.centerYAnchor].active = true;
+    [_swipeView.centerXAnchor constraintEqualToAnchor: self.view.centerXAnchor].active = true;
     CGFloat height = 0.75 * self.view.bounds.size.height;
     CGFloat width = 0.85 * self.view.bounds.size.width;
-    [_centerView.heightAnchor constraintEqualToConstant:height].active = true;
-    [_centerView.widthAnchor constraintEqualToConstant:width].active = true;
+    [_swipeView.heightAnchor constraintEqualToConstant:height].active = true;
+    [_swipeView.widthAnchor constraintEqualToConstant:width].active = true;
     
-    _centerView.layer.cornerRadius = 0.2*width;
-    _centerView.layer.borderWidth = 5;
-    _centerView.layer.borderColor = UIColor.redColor.CGColor;
+    _swipeView.layer.cornerRadius = 0.2*width;
+    _swipeView.layer.borderWidth = 5;
+    _swipeView.layer.borderColor = UIColor.redColor.CGColor;
 }
 
 
