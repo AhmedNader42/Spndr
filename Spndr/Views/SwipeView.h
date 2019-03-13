@@ -7,9 +7,14 @@
 //
 #import <UIKit/UIKit.h>
 
+@protocol SwipeViewDelegate
+- (void) didFinishSwipe: (BOOL) shouldRemove;
+
+@end
 
 @interface SwipeView : UIView
 - (void) setThresholdPoints: (double) rightBound : (double) leftBound;
 @property double rightBound;
 @property double leftBound;
+@property (nonatomic, weak) id delegate;
 @end

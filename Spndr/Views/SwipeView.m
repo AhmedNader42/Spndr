@@ -14,6 +14,7 @@
 
 @implementation SwipeView
 
+@synthesize delegate;
 
 - (instancetype)init
 {
@@ -59,22 +60,28 @@
     }
     
     
-    
+    // When the press is released
     if (panGesture.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"Right %f", _rightBound);
-        NSLog(@"Left %f", _leftBound);
-        NSLog(@"%f", translation.x);
+//        NSLog(@"Right %f", _rightBound);
+//        NSLog(@"Left %f", _leftBound);
+//        NSLog(@"%f", translation.x);
+        
+        // If it exceeds the right threshhold move it right
         if (translation.x > _rightBound) {
+            
             NSLog(@"Threshhold reached");
             t = CGAffineTransformTranslate(t, 10000, translation.y);
             self.transform = t;
-        }
-        
-        if (translation.x < _leftBound) {
+            [delegate didFinishSwipe:true];
+        } else if (translation.x < _leftBound) {
+            
             NSLog(@"Negative Threshhold reached");
             t = CGAffineTransformTranslate(t, -10000, translation.y);
             self.transform = t;
-            
+            [delegate didFinishSwipe:true];
+        } else {
+            // Reset it back
+            [delegate didFinishSwipe:false];
         }
     }
     

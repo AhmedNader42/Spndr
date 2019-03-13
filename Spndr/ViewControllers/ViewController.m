@@ -18,26 +18,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self setupUI];
-    [self setupGestures];
-    
-    
-}
-- (void)setupGestures{
-//    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection:)];
-//    [leftSwipe setDirection: UISwipeGestureRecognizerDirectionLeft];
-//
-//    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection: )];
-//    [rightSwipe setDirection: UISwipeGestureRecognizerDirectionRight];
-//
-//    UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action: @selector(swipeDetection:)];
-//    [upSwipe setDirection: UISwipeGestureRecognizerDirectionUp];
-//
-//    leftSwipe.delegate = self;
-//    [self.view addGestureRecognizer: leftSwipe];
-//    [self.view addGestureRecognizer: rightSwipe];
-//    [self.view addGestureRecognizer: upSwipe];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
 
+    _swipeView.delegate = self;
+    
     
 }
 
@@ -46,12 +31,14 @@
     _swipeView = [[SwipeView alloc] init];
     [_swipeView setThresholdPoints: (self.view.center.x - 40): (self.view.center.x - 220)];
     [self.view addSubview: _swipeView];
-    
+    NSLog(@"The x value of the center %f", self.view.center.x);
+    NSLog(@"The y value of the center %f", self.view.center.y);
     
     // Views customization
     _swipeView.translatesAutoresizingMaskIntoConstraints = false;
     [_swipeView.centerYAnchor constraintEqualToAnchor: self.view.centerYAnchor].active = true;
     [_swipeView.centerXAnchor constraintEqualToAnchor: self.view.centerXAnchor].active = true;
+    
     CGFloat height = 0.75 * self.view.bounds.size.height;
     CGFloat width = 0.85 * self.view.bounds.size.width;
     [_swipeView.heightAnchor constraintEqualToConstant:height].active = true;
@@ -62,5 +49,22 @@
     _swipeView.layer.borderColor = UIColor.redColor.CGColor;
 }
 
+
+- (void)didFinishSwipe:(BOOL)shouldRemove {
+
+    if (shouldRemove) {
+        NSLog(@"Should remove");
+        [_swipeView removeFromSuperview];
+    } else {
+        NSLog(@"Should be reseting");
+        [UIView animateWithDuration:0.5 animations:^{
+            CGPoint p = CGPointMake(self.view.center.x, self.view.center.y);
+            self.swipeView.center = p;
+            [self.view setNeedsDisplay];
+        }];
+        
+    }
+    
+}
 
 @end
