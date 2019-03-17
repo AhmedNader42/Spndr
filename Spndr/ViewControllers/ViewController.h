@@ -10,6 +10,6 @@
 #import "SwipeView.h"
 
 @interface ViewController : UIViewController <SwipeViewDelegate>
-@property SwipeView *swipeView;
+@property NSMutableArray *swipeViews;
 @end
 

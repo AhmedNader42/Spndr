@@ -12,7 +12,7 @@
 
 @end
 
-@interface SwipeView : UIView
+@interface SwipeView : UIView <NSObject>
 - (void) setThresholdPoints: (double) rightBound : (double) leftBound;
 @property double rightBound;
 @property double leftBound;

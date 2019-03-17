@@ -88,6 +88,12 @@
     [self setNeedsDisplay];
 }
 
+- (void)dealloc
+{
+    NSLog(@"Deallocating object");
+}
+
+
 
 @end
 
